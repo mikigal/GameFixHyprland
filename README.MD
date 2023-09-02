@@ -11,7 +11,7 @@ This tool simply looks for working processes every 5 (value `check_delay` in con
 2. Create file `config.json` in the same directory
 3. Copy values from example config to your file
 4. Put correct values for your setup - same as you did in Hyprland. Set `game_display` to `true` on display for playing League
-5. Add tool as `exec-once` in your Hyprland configuration
+5. Add tool as `exec-once` in your Hyprland configuration (working directory *MUST* be directory of tool)
 
 ## Stability
 I tested tool with my setups (3 displays, everyone 1440p) with game in center - works great for me. If you experience any problems please create an Issue or even better - pull request with fix.
