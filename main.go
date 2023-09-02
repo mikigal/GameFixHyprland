@@ -9,9 +9,6 @@ import (
 	"time"
 )
 
-const checkDelay = 5
-const offset = 100
-
 var previousRunning = false
 
 func main() {
@@ -22,7 +19,7 @@ func main() {
 	logMessage("Loaded configuration!")
 
 	for {
-		time.Sleep(checkDelay * time.Second)
+		time.Sleep(time.Duration(config.CheckDelay) * time.Second)
 
 		running := isLeagueRunning()
 		if running == previousRunning {
@@ -43,7 +40,7 @@ func main() {
 
 			calculatedPositionX := display.PositionX
 			if running {
-				calculatedPositionX = display.PositionX + (offset * index)
+				calculatedPositionX = display.PositionX + (config.Offset * index)
 			}
 
 			parameters := display.Id + ", " +
